@@ -2,6 +2,7 @@ package com.ruaho.studyapp.activity;
 
 import android.os.Bundle;
 import android.view.View;
+
 import com.ruaho.studyapp.R;
 
 public class MainActivity extends BaseActivity {
@@ -10,6 +11,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
     }

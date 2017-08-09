@@ -123,4 +123,14 @@ public final class StringUtils {
         return "<font color=\"red\">" + string + "</font>";
     }
 
+    /**
+     * <p>Checks if a String is not empty ("") and not null.</p>
+     *
+     * @param str the String to check, may be null
+     * @return <code>true</code> if the String is not empty and not null
+     */
+    public static boolean isNotEmpty(String str) {
+        return !StringUtils.isEmpty(str);
+    }
+
 }
