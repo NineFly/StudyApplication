@@ -4,6 +4,37 @@ package com.ruaho.studyapp.bean;
  * Created by jinyunyang on 15/3/5.
  */
 public class Constant {
+
+    /**
+     * 测试字符串
+     */
+    public static final String TEST_STRING = "{\n" +
+            "    \"Category\": [\n" +
+            "        {\n" +
+            "            \"categoryId\": 1,\n" +
+            "            \"categoryName\": \"饮品\",\n" +
+            "            \"categoryImage\": \"/upload/yinpin.jpg\"\n" +
+            "        },\n" +
+            "        {\n" +
+            "            \"categoryId\": 2,\n" +
+            "            \"categoryName\": \"食品\",\n" +
+            "            \"categoryImage\": \"/upload/shiping.jpg\"\n" +
+            "        },\n" +
+            "        {\n" +
+            "            \"categoryId\": 3,\n" +
+            "            \"categoryName\": \"酒类\",\n" +
+            "            \"categoryImage\": \"/upload/jiullei.jpg\"\n" +
+            "        }\n" +
+            "    ],\n" +
+            "    \"recommend\": {\n" +
+            "        \"id\": 11,\n" +
+            "        \"productName\": \"统一老坛泡椒牛肉袋面香辣味110g*24袋\",\n" +
+            "        \"filenameSmall\": \"/upload/ty_ltpj_small.jpg\",\n" +
+            "        \"productPrice\": 48,\n" +
+            "        \"productCost\": 47.5\n" +
+            "    }\n" +
+            "}";
+
     /**
      * 回车符
      */
@@ -70,7 +101,7 @@ public class Constant {
      * 参数：设置prepare sql变量信息
      */
     public static final String PARAM_PRE_VALUES = "_PREVALUES_";
-    
+
     /**
      * 每页显示数据量
      */

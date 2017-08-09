@@ -2,7 +2,6 @@ package com.ruaho.studyapp.activity;
 
 import android.os.Bundle;
 import android.view.View;
-
 import com.ruaho.studyapp.R;
 
 public class MainActivity extends BaseActivity {
@@ -13,12 +12,12 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
 
-
     }
 
     public void onClick(View view){
         switch (view.getId()){
             case R.id.btn1:
+
                 break;
             case R.id.btn2:
                 break;
