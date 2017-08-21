@@ -31,7 +31,8 @@ public class AddressBolg {
         >6:提高安卓开发人员能力的20个开源项目
             http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2017/0214/7114.html
 
-
+        >7:android中文学习网站
+            http://hukai.me/android-training-course-in-chinese/index.html
 
 
 */
