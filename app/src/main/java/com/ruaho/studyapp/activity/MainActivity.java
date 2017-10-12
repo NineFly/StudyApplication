@@ -4,9 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.ruaho.studyapp.R;
-import com.ruaho.studyapp.bean.Bean;
-import com.ruaho.studyapp.goodcode.PushFactory;
-import com.ruaho.studyapp.goodcode.PushInterface;
 
 public class MainActivity extends BaseActivity {
 
@@ -14,7 +11,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //this is git ceshi!
 
 
     }
