@@ -1,0 +1,27 @@
+
+
+
+http://blog.csdn.net/lyj1005353553/article/details/55100563
+
+1：JsonOnlineViewer 
+	的使用
+	在Android Studio中请求、调试接口
+	
+2:findBugs
+	的使用
+	
+3:Activity生命周期格式化
+	Ctrl + alt + K
+	
+
+http://blog.csdn.net/crazy1235/article/details/48598803
+	
+4:Android Methods Count
+	显示依赖库中的方法数。
+	
+5:Material Theme UI Android studio编辑器风格
+
+
+6:Android 开发工具之Codota——搜索最好的Android 代码
+	最好的代码搜索
+		http://www.jianshu.com/p/59b89c26f9e0/	
