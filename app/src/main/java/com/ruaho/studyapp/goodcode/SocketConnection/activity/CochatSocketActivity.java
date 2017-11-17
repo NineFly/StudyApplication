@@ -43,6 +43,9 @@ import io.socket.emitter.Emitter;
 /**
  * Created by ruaho on 2017/11/17.
  * 众信登录消息服务器的例子
+ * github地址
+ * 1:https://github.com/nkzawa/socket.io-android-chat (这里面是Android的Socket的工程)
+ * 2:https://github.com/socketio/socket.io-client-java (这里面有Maven工程)
  */
 public class CochatSocketActivity extends BaseActivity {
 
@@ -143,6 +146,7 @@ public class CochatSocketActivity extends BaseActivity {
         JSONObject loginReq = new JSONObject();//登陆的请求(存储很多参数数据)，传递给后台
         try {
             loginReq.putOpt("userName", "1vlCZ9oRhfNqTxeB40Tx3wqZ");
+            //token是实时的,必须每次登陆众信获取,退出后token失效
             loginReq.putOpt("token", "07f44593e8a27928c4b820966efd77c6");
             loginReq.putOpt("displayName", "喻林");
             loginReq.putOpt("version", "5300");
