@@ -3,7 +3,11 @@ package com.ruaho.studyapp.bean;
 /**
  * Created by jinyunyang on 15/3/5.
  */
+
 import java.util.Date;
+import java.util.Random;
+import java.util.UUID;
+
 /**
  * 这些帮助函数让 Java 的某些常用功能变得更简单
  *
@@ -12,6 +16,25 @@ import java.util.Date;
 public class Lang {
     private static final String TAG = "LANG";
     private static String SEPARATOR = ",";
+
+    /** 下面代码用于将36位的UUID字符串转为22位的字符串，提升系统运行效率 */
+    private static final char[] CHAR_MAP;
+
+    static {
+        CHAR_MAP = new char[64];
+        for (int i = 0; i < 10; i++) {
+            CHAR_MAP[i] = (char) ('0' + i);
+        }
+        for (int i = 10; i < 36; i++) {
+            CHAR_MAP[i] = (char) ('a' + i - 10);
+        }
+        for (int i = 36; i < 62; i++) {
+            CHAR_MAP[i] = (char) ('A' + i - 36);
+        }
+        CHAR_MAP[62] = '_';
+        CHAR_MAP[63] = '-';
+    }
+
     /** log */
 //    private static Log log = LogFactory.getLog(Lang.class);
 
@@ -21,6 +44,70 @@ public class Lang {
     private Lang() {
     }
 
+    /**
+     * 得到随机的22位UUID
+     * @return 22位UUID
+     */
+    public static String getUUID() {
+        StringBuilder sb = new StringBuilder("0");
+        String uuid = UUID.randomUUID().toString();
+        uuid = uuid.replaceAll("-", "");
+        sb.append(uuid);
+        uuid = hexTo64(sb.toString());
+        uuid = uuid.replaceAll("_", randomAlphanumeric(2));
+        uuid = uuid.replaceAll("-", randomAlphanumeric(2));
+        return uuid;
+    }
+
+    /**
+     * 将16进制字符串转换为64进制
+     * @param hex 16进制字符串
+     * @return 64进制字符串
+     */
+    private static String hexTo64(String hex) {
+        StringBuilder r = new StringBuilder();
+        int index = 0;
+        final int size = 3;
+        int[] buff = new int[size];
+        int l = hex.length();
+        for (int i = 0; i < l; i++) {
+            index = i % size;
+            buff[index] = Integer.parseInt("" + hex.charAt(i), 16);
+            if (index == 2) {
+                r.append(CHAR_MAP[buff[0] << 2 | buff[1] >>> 2]);
+                r.append(CHAR_MAP[(buff[1] & size) << 4 | buff[2]]);
+            }
+        }
+        return r.toString();
+    }
+
+    public static String randomAlphanumeric (int count) {
+        if (count == 0) {
+            return "";
+        } else if (count < 0) {
+            throw new IllegalArgumentException("Requested random string length " + count + " is less than 0.");
+        }
+        int start = ' ';
+        int end = 'z' + 1;
+
+        char[] buffer = new char[count];
+        int gap = end - start;
+
+        Random random = new Random();
+
+        while (count-- != 0) {
+            char ch = (char) (random.nextInt(gap) + start);
+            if (Character.isLetter(ch)
+                    ||  Character.isDigit(ch)
+                    )
+            {
+                buffer[count] = ch;
+            } else {
+                count++;
+            }
+        }
+        return new String(buffer);
+    }
 
     /**
      * 转型为整型

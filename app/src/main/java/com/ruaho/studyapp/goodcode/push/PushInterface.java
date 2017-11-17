@@ -1,4 +1,4 @@
-package com.ruaho.studyapp.goodcode;
+package com.ruaho.studyapp.goodcode.push;
 
 /**
  * Created by ruaho on 2017/9/21.

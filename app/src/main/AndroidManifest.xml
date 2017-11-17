@@ -29,6 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MediaPlayerActivity"/>
+        <activity android:name=".goodcode.SocketConnection.activity.CochatSocketActivity"/>
     </application>
 
 </manifest>

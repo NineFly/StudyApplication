@@ -1,9 +1,9 @@
-package com.ruaho.studyapp.goodcode;
+package com.ruaho.studyapp.goodcode.push;
 
 import java.lang.reflect.Method;
 
-import static com.ruaho.studyapp.goodcode.PushFactory.PushType.HuaWeiPush;
-import static com.ruaho.studyapp.goodcode.PushFactory.PushType.MiPush;
+import static com.ruaho.studyapp.goodcode.push.PushFactory.PushType.HuaWeiPush;
+import static com.ruaho.studyapp.goodcode.push.PushFactory.PushType.MiPush;
 
 /**
  * Created by ruaho on 2017/9/21.

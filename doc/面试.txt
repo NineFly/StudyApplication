@@ -6,7 +6,8 @@
         2、不验证通信方的身份， 因此有可能遭遇伪装
         3、无法证明报文的完整性， 所以有可能已遭篡改
 
-
+2:没事就多上网学习资料
+    链接:https://github.com/Freelander/Android_Data
 
 
 

@@ -1,9 +1,11 @@
 package com.ruaho.studyapp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.ruaho.studyapp.R;
+import com.ruaho.studyapp.goodcode.SocketConnection.activity.CochatSocketActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -22,7 +24,7 @@ public class MainActivity extends BaseActivity {
     public void onClick(View view){
         switch (view.getId()){
             case R.id.btn1:
-
+                startActivity(new Intent(MainActivity.this, CochatSocketActivity.class));
                 break;
             case R.id.btn2:
                 break;

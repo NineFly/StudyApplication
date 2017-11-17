@@ -6,6 +6,10 @@ package com.ruaho.studyapp.bean;
 public class Constant {
 
     /**
+     * 众信消息服务器地址
+     */
+    public static final String CHAT_SERVER_URL = "http://cochat.cn:9091";
+    /**
      * 测试字符串
      */
     public static final String TEST_STRING = "{\n" +
