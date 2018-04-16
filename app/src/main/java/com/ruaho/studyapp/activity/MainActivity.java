@@ -17,9 +17,9 @@ public class MainActivity extends BaseActivity {
 //        int[] arr = new int[]{11, 25, 45, 26, 12, 78};
 //        sort(arr);
 
-        int[] data = new int[] { 26, 53, 67, 48, 57, 13, 48, 32, 60, 50 };
-        shellSortSmallToBig(data);
-        System.out.println(Arrays.toString(data));
+//        int[] data = new int[] { 26, 53, 67, 48, 57, 13, 48, 32, 60, 50 };
+//        shellSortSmallToBig(data);
+//        System.out.println(Arrays.toString(data));
     }
 
     public static void shellSortSmallToBig(int[] data) {
