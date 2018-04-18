@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.ruaho.studyapp"
         minSdkVersion 19
@@ -23,26 +23,26 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    api 'com.android.support:appcompat-v7:25.3.1'
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
 
     //GreenDao数据库
-    compile 'org.greenrobot:greendao:3.2.2' // add library
+    api 'org.greenrobot:greendao:3.2.2' // add library
 
     //OkHttp3网络框架的封装
-    compile 'com.squareup.okhttp3:okhttp:3.8.0'//网络请求
+    api 'com.squareup.okhttp3:okhttp:3.8.0'//网络请求
 
     //好看的进度条:https://github.com/castorflex/SmoothProgressBar
-    compile 'com.hannesdorfmann.smoothprogressbar:library:1.0.0'
-    compile 'com.github.castorflex.smoothprogressbar:library-circular:1.0.0'
+    api 'com.hannesdorfmann.smoothprogressbar:library:1.0.0'
+    api 'com.github.castorflex.smoothprogressbar:library-circular:1.0.0'
 
-    compile 'com.android.support:recyclerview-v7:25.0.+'
-    compile ('io.socket:socket.io-client:0.8.3') {
+    api 'com.android.support:recyclerview-v7:25.0.+'
+    api ('io.socket:socket.io-client:0.8.3') {
         exclude group: 'org.json', module: 'json'
     }
 
