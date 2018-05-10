@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.ruaho.studyapp.R;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.Arrays;
 
@@ -20,6 +21,8 @@ public class MainActivity extends BaseActivity {
         shellSortSmallToBig(data);
         System.out.println(Arrays.toString(data));
         //
+        CrashReport.testJavaCrash();
+
     }
 
     public static void shellSortSmallToBig(int[] data) {
