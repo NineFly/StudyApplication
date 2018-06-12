@@ -1,0 +1,19 @@
+Handler
+    4.1. 为什么要有Handler
+        4.1.1. 主线程不能做耗时操作, 要放在子线程
+        4.1.2. 子线程不能修改主线程的UI, 就需要Handler
+    4.2. new Handler(), 重写handleMessage, sendMessage, post, Message,
+    4.3. 消息队列 MessageQueue, Looper.prepare, Looper.loop
+    4.4. 所有的界面操作, 都依赖于Handler机制
+    4.5. 子线程只要调用了 Looper.prepare, Looper.loop, 就可以在这两行代码之间使用WindowManager修改UI,
+        主线程也不能修改子线程创建的UI
+    4.6. Handler是线程间通信的工具
+
+HandlerThread(等同于 Thread + Handler）
+    链接：https://blog.csdn.net/double2hao/article/details/58598171
+    众信项目使用；DelayHandleUtil.setDelay();
+
+
+
+
+
