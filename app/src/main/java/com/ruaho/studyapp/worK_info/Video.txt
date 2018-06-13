@@ -1,0 +1,109 @@
+
+1：android视频播放实现方式两种
+    1：VideoView 实现简单，但是封装比较死，不方便修改
+    2：SurfaceView + MediaPlayer 自定义定制需求高
+
+
+
+2：针对Android视频播放，现在一个好的开源库 PlayerBase
+    demo链接：https://github.com/jiajunhui/PlayerBase
+    博客链接：https://mp.weixin.qq.com/s/Y766VgYxMo9iyxgpYaRb4A
+
+3：类说明
+    1：DataUtils 所有原先假数据数据放在这个地方
+    2：BaseVideoView 自定义的视频View
+
+
+    0:布局方案怎么处理的
+   	由播放状态驱动，试图之间可能共存，可能制约
+   	吧每个组件封装成view，写到布局文件中， 涉及到播放器和组件件通信，组件和组件间通信问题
+
+   	1:组件布局的层级完全由布局文件决定了，想调整只能去修改布局文件。并不友好。
+   	2:组件和播放器完全捆绑了，耦合度相当高，播放器和组件，组件和组件间的通信完全直接使用引用去操作，
+   		如果产品说某个组件要去掉或 者大改，你就哭吧，改不好手一哆嗦就有可能带来一堆bug。组件耦合度高，
+   		并不支持插拔。这是最大阻碍。
+   	3:组件的复用困难。
+
+   		接受者Receiver和覆盖层Cover
+   			视图是事件接收者，也是事件的生产者
+   			解码器是事件生产者
+   			可能有外来的事件生产者
+
+   			自定义事件接受者概念 BaseReceiver
+
+   			接受者管理 ReceiverGroup 事件管理，事件下发，数据共享 IReceiverGroup
+
+   			组件间数据共享 GroupValue 状态上相互制约 加载时禁止拖动进度条 CustomCover
+
+   			Cover试图 CoverLevel进行控制，不同Leverl显示不同试图
+   				Cover 指定CoverLevel优先级
+   				Cover组件被添加时自动根据Level值进行分别放置	CustomCover
+   			默认试图容器管理器	DefaultLevelCoverContainer
+
+   		事件生产者 EventProducer
+   			NetWorkEventProducer 回调到onReceiverEvent()中 发送key-value放到GroupValue中
+
+   		数据提供者 DataProvider	MonitorDataProvider
+   			先有ID，请求服务器，获取url，拉去数据
+
+   		VIdeoVIew使用：
+   			初始化VideoView，并设置相应的监听事件或者数据提供者等
+   			使用ReceiverGroup组装需要的组件Cover和Receiver
+   			把组件设置给VideoView
+   			设置数据启动播放
+   			暂停恢复播放等操作
+   			销毁播放器
+   					VideoViewActivity
+
+   		AVPlayer的使用
+   			如果您想直接使用AVPlayer自己进行处理播放，那么大致步骤如下：
+
+   			初始化一个AVPlayer对象。
+   			初始化一个SuperContainer对象，将ReceiverGroup设置到SuperContainer中。
+   			使用SuperContainer设置一个渲染视图Render，然后自己处理RenderCallBack并关联解码器。
+   			mPlayer
+
+   		5.5 Window模式播放
+
+   			我们有时可能为了不打断用户的浏览需要小窗播放。框架特意设计了window播放的使用。框架提供了两种window相关的组件。
+
+   			WindowVideoView
+   			FloatWindow
+
+
+   		5.6 解码器的接入
+   			框架自带了系统的MediaPlayer的解码实现，项目demo中示例接入了ijkplayer和exoplayer，如果您想接入其他的解码器，请参见示例代码，以下为简单示例，更详细的请参见项目源码。
+   			接入步骤
+
+   			继承自BaseInternalPlayer
+   			实现定义的抽象方法
+   			配置引入您的解码器
+
+
+   1:播放器的控制试图还是业务试图，均可以做到组件化处理 这个是怎么做到的？
+
+   2:解码方案的组件化，配置化管理
+
+   3:试图组件的热插拔，用添加，不用移除
+
+   4:自定义各种解码方案
+
+   5:倍速播放
+
+   6:Window模式播放 无缝续播
+
+   7:列表模式无缝续播
+
+   8:跨页面无缝续播
+
+   9:调整画面显示比例
+
+   10:动态调整渲染试图类型
+
+   11:VideoView切角处理，边缘阴影效果
+
+   12:提供自定义数据提供者
+
+   13:统一的事件下发机制
+
+   14:扩展事件添加
