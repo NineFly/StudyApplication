@@ -12,7 +12,12 @@
 3：类说明
     1：DataUtils 所有原先假数据数据放在这个地方
     2：BaseVideoView 自定义的视频View
-
+    3:四个显示不同到封面
+        LoadingCover        加载封面
+        ControllerCover     控制器封面 返回按钮，全屏幕按钮，进度条
+        GestureCover        手势识别封面 上滑，下滑 调整亮度，声音
+        CompleteCover       完成封面    重播，下一个
+        ErrorCover          出现错误封面
 
     0:布局方案怎么处理的
    	由播放状态驱动，试图之间可能共存，可能制约
