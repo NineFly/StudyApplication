@@ -21,6 +21,7 @@ public class MainActivity extends BaseActivity {
         System.out.println(Arrays.toString(data));
         //
 //        CrashReport.testJavaCrash();
+        //一
 
     }
 
