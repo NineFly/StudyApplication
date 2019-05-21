@@ -35,6 +35,7 @@ public class LifeFragment extends Fragment {
         /*  执行该方法时，Fragment与Activity已经完成绑定，该方法有一个Activity
         类型的参数，代表绑定的Activity，这时候你可以执行诸如
         mActivity = activity的操作。*/
+        //test
     }
 
     @Override
