@@ -1,4 +1,4 @@
-package com.ruaho.studyapp.activity;
+package com.ruaho.studyapp.mediaplayer;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.ruaho.studyapp.R;
+import com.ruaho.studyapp.activity.BaseActivity;
 
 /**
  * Created by ruaho on 2017/9/5.
