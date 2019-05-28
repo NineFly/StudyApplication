@@ -5,7 +5,7 @@ android {
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.ruaho.studyapp"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 0001
         versionName "0.0.0.1"
@@ -35,8 +35,6 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    api 'com.android.support:appcompat-v7:25.3.1'
-    api 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
 
     //GreenDao数据库
@@ -53,5 +51,8 @@ dependencies {
     api ('io.socket:socket.io-client:0.8.3') {
         exclude group: 'org.json', module: 'json'
     }
+    api 'com.android.support:appcompat-v7:26.1.0'
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
+    api 'me.jessyan:autosize:0.9.5'
 
 }
