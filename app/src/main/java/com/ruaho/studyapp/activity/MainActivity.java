@@ -8,6 +8,10 @@ import com.ruaho.studyapp.R;
 
 import java.util.Arrays;
 
+/**
+ * NDK例子
+ * 链接: https://blog.csdn.net/young_time/article/details/80346631
+ */
 public class MainActivity extends BaseActivity {
 
     @Override
