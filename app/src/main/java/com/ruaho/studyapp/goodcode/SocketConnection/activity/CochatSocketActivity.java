@@ -76,10 +76,10 @@ public class CochatSocketActivity extends BaseActivity {
     }
 
     private void initView() {
+
         mMessagesView = (RecyclerView) findViewById(R.id.messages);
         mInputMessageView = (EditText) findViewById(R.id.message_input);
         sendButton = (ImageButton) findViewById(R.id.send_button);
-
         mAdapter = new MessageAdapter(this, mMessages);
         mMessagesView.setLayoutManager(new LinearLayoutManager(CochatSocketActivity.this));
         mMessagesView.setAdapter(mAdapter);
@@ -96,7 +96,6 @@ public class CochatSocketActivity extends BaseActivity {
     }
 
     private void initEvent() {
-
         mInputMessageView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int id, KeyEvent event) {
@@ -138,6 +137,16 @@ public class CochatSocketActivity extends BaseActivity {
         });
 
     }
+
+    //systermserver
+    //packagemanageservice
+    //windowmanagerservice  servicefinger
+    //
+    //sensormanagerservice
+    //networkmanagerservice
+    //wifiserver
+    //blueteethservice
+    //
 
     /**
      * 登录人信息

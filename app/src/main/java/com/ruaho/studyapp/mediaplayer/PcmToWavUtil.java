@@ -71,6 +71,33 @@ public class PcmToWavUtil {
     }
 
 
+    /*
+    *
+    * servicemanager
+    * getservice
+    * servicemanager
+    *
+    * addService pullService
+    * getServiceManager
+    * write os.i.service    addservice
+    *
+    * mSharedLibiary
+    *
+    * Camera
+    * forcks
+    * hitmanagerService
+    * systemapp
+    * core lib.jar
+    * dsoplid
+    * packagemanageservice
+    *
+    *
+    *
+    *
+    *
+    *
+    * */
+
     /**
      * 加入wav文件头
      */

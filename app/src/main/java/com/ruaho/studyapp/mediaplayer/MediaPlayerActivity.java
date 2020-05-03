@@ -84,7 +84,8 @@ public class MediaPlayerActivity extends BaseActivity {
                     hint.setText("继续播放音频...");
                     isPause=false;
                     play.setEnabled(false);
-                }
+                }//指南针 磁场传感器 陀螺仪 x y z
+
             }
         });
 

@@ -78,7 +78,7 @@ public class HttpClientProvider {
         params.put(VER, VER_VAL);
     }
 
-    public static String createUrl(String url, Map<Object, Object> params, boolean addDefaultParam) {
+    String createUrl(String url, Map<Object, Object> params, boolean addDefaultParam) {
         String paramStr = mergeUrlParam(params, addDefaultParam);
         if (paramStr.length() > 0) {
             paramStr = paramStr.replaceFirst("&", "?");
@@ -206,6 +206,22 @@ public class HttpClientProvider {
         Call call = httpClient.newCall(rr);
         call.enqueue(em);
     }
+
+    /** loader
+     *      各种加载器,这是硬件 C部分
+     *
+     * -> kernal
+     *      linux层,这部分是干嘛的 不清楚
+     *
+     * -> liberay
+     *
+     *
+     * -> framework
+     *
+     *
+     * -> application
+     *
+     * */
 
     /**
      * 创建OkHttpClient对象
